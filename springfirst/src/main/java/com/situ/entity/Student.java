@@ -60,4 +60,5 @@ public Student(String name, Integer gender, Integer batchid) {
 	public void setGender(Integer gender) {
 		this.gender = gender;
 	}
+	
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.situ.dao.StudentDao;
-import com.situ.dao.StudentDao1;
 import com.situ.entity.Student;
 
 @Service
@@ -14,16 +13,32 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Autowired
 	StudentDao dao;
-	@Autowired
-	StudentDao1 dao1;
+
 	public List<Student> select(String txt) {
 		
 		return dao.select(txt);
 	}
-	
-	public List<Student> selectall(String txt) {
-		
-		return dao1.select(txt);
+
+	public Student findStudentById(Integer id) {
+		// TODO Auto-generated method stub
+		return dao.findStudentById(id);
 	}
+
+	public void insert(Student stu) {
+		// TODO Auto-generated method stub
+		dao.insert(stu);
+	}
+
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		dao.delete(id);
+	}
+
+	public void update(Student stu) {
+		// TODO Auto-generated method stub
+		dao.update(stu);
+		
+	}
+
 
 }
